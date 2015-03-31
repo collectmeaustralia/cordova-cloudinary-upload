@@ -19,10 +19,10 @@ Unzip the build into ```src/ios/cloudinary_sdk``` to get the following structure
 ```
 
 To install:
-	cordova plugin add PATH_TO_PLUGIN --variable CLOUD_NAME="xxx" --variable API_KEY="xxx" --variable API_SECRET="xxx"
+```cordova plugin add PATH_TO_PLUGIN --variable CLOUD_NAME="xxx" --variable API_KEY="xxx" --variable API_SECRET="xxx"```
 
 To remove:
-	cordova plugin remove cordova.plugins.cloudinary
+```cordova plugin remove cordova.plugins.cloudinary```
 
 ## Usage
 
