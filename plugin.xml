@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="cordova.plugins.cloudinary"
+    version="0.0.1">
+
+    <name>Cloudinary</name>
+    <description>Cloudinary uploader</description>
+
+    <preference name="CLOUD_NAME" />
+    <preference name="API_KEY" />
+    <preference name="API_SECRET" />
+
+    <js-module src="www/cloudinary-upload.js" name="Cloudinary">
+        <clobbers target="cordova.plugins.cloudinary" />
+    </js-module>
+
+    <!-- ios -->
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="Cloudinary">
+                <param name="ios-package" value="CDVCloudinaryUpload" />
+            </feature>
+        </config-file>
+
+        <config-file target="*-Info.plist" parent="CloudinaryCloudName">
+            <string>$CLOUD_NAME</string>
+        </config-file>
+
+        <config-file target="*-Info.plist" parent="CloudinaryAPIKey">
+            <string>$API_KEY</string>
+        </config-file>
+
+        <config-file target="*-Info.plist" parent="CloudinaryAPISecret">
+            <string>$API_SECRET</string>
+        </config-file>
+
+        <header-file src="src/ios/cloudinary_sdk/include/Cloudinary/Cloudinary.h" />
+        <header-file src="src/ios/cloudinary_sdk/include/Cloudinary/CLCloudinary.h" />
+        <header-file src="src/ios/cloudinary_sdk/include/Cloudinary/CLTransformation.h" />
+        <header-file src="src/ios/cloudinary_sdk/include/Cloudinary/CLEagerTransformation.h" />
+        <header-file src="src/ios/cloudinary_sdk/include/Cloudinary/CLUploader.h" />
+
+        <header-file src="src/ios/CDVCloudinaryUpload.h" />
+        <source-file src="src/ios/CDVCloudinaryUpload.m" />
+
+        <source-file src="src/ios/cloudinary_sdk/libCloudinary.a" framework="true" />
+    </platform>
+
+</plugin>
