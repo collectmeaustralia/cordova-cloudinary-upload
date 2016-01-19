@@ -1,7 +1,10 @@
 #cordova-cloudinary-upload
-
 Cordova plugin to upload images to [Cloudinary](http://cloudinary.com). Built to use in tandem with the Cordova Camera plugin.
 
+## Important
+As a cross-platform alternative to this plugin, I recommend using the [cordova-plugin-file-transfer plugin](https://github.com/apache/cordova-plugin-file-transfer) and the [Cloudinary HTTP API](http://cloudinary.com/documentation/upload_images) to upload resources to Cloudinary with Cordova. There is some sample code in issue #1 showing how you can get this combination to work.
+
+## Setup
 Download the [Cloudinary iOS SDK](http://res.cloudinary.com/cloudinary/raw/upload/cloudinary_ios_v1.0.12.zip), or check the [GitHub repo](https://github.com/cloudinary/cloudinary_ios) for the latest build.
 
 Unzip the build into ```src/ios/cloudinary_sdk``` to get the following structure:
